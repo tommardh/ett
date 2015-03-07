@@ -1,0 +1,23 @@
+<!doctype html>
+<html ng-app>
+<head>
+    <title>Enabling Text Training</title>
+    <link rel="stylesheet" type="text/css" href="format.css"> 
+<script type="text/javascript">
+    function TextTrainingController($scope){
+        $scope.name="Anonymous"
+    }  
+</script>
+</head>
+<body>
+    <h1>Enabling Text Training</h1>
+    <p>This is a site where you can practice words by creating and executing fill-in exercises from your own text.</p>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
+<div ng-controller="TextTrainingController">
+    Enter Your Name : <input type="text" ng-model="name">
+    <br />
+    <hr />
+    Name : {{name}}<br />
+</div>
+</body>
+</html>
