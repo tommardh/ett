@@ -15,6 +15,11 @@ li {
 	color: green;
 }
 
+.largetext {
+	width: 300px;
+	height: 300px;
+}
+
 .ewlicon {
 	text-decoration: none;
 	color: black;
