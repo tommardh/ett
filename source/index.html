@@ -1,12 +1,24 @@
 <!doctype html>
 <html ng-app>
+<meta charset="UTF-8">
 <head>
     <title>Enabling Text Training</title>
     <link rel="stylesheet" type="text/css" href="format.css"> 
 <script type="text/javascript">
     function TextTrainingController($scope){
         $scope.name="Anonymous"
-    }  
+        $scope.showHint=function (number) {
+            if (number === 1) {
+                $scope.word1 = "dold";
+            };
+        }
+        $scope.showWord=function (number) {
+            if (number === 1) {
+                $scope.word1 = "hemliga";
+            };
+        }
+    }
+
 </script>
 </head>
 <body>
@@ -14,13 +26,24 @@
     <p>This is a site where you can practice words by creating and executing fill-in exercises from your own text.</p>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.1/angular.min.js"></script>
 <div ng-controller="TextTrainingController">
+    <h2>Setup</h2>
     Enter your name : <input type="text" ng-model="name">
     <br />
-    Enter 
+    Paste your text here : <input type="text" ng-model="originaltext">
     <br />
-    <input type="text" maxlength="1024" class="largetext" wrap="true" ng-model="originaltext">
     <hr />
+    <h2>Exercise</h2>
     Name : {{name}}<br />
+    {{originaltext}}<br />
+    <!-- p>Det är i Umeå den hemliga banken ligger. Där finns orden som kommer att ingå i framtidens högskoleprov. Maria Johansson är en av högskoleprovets konstruktörer. Hon ansvarar för delproven ORD och meningskomplettering, MEK. – När jag gör en uppgift utgår jag ofta från ett ord som jag har hört eller läst i en tidning. Ibland får jag också tips från mina medarbetare, säger Maria Johansson.</p-->
+    <br />
+    Det är i Umeå den <input type="text" ng-model="word1"><button ng-click="showHint(1)">Hint</button><button ng-click="showWord(1)">Show</button> banken ligger. Där finns orden <input type="text" ng-model="word2"> kommer att ingå i framtidens högskoleprov. Maria Johansson är en av högskoleprovets konstruktörer. Hon ansvarar för delproven ORD och meningskomplettering, MEK. – När jag gör en uppgift utgår jag ofta från ett ord som jag har hört eller läst i en tidning. Ibland får jag också tips från mina medarbetare, säger Maria Johansson.
+    <br />
+    <hr />
+    <button>Evaluate</button>
+    <h2>Evaluation</h2>
+    <br /><hr />
+
 </div>
 </body>
 </html>
